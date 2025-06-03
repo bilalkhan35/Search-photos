@@ -54,9 +54,43 @@ function App() {
     setPage(1);
     setPhotos([]); // Clear previous photos on new search
     fetchImages();
+    setQuery(""); // Clear the search bar after searching
   };
   return (
-    <main>
+    <main className="min-h-screen bg-gradient-to-br from-purple-200 via-blue-200 via-40% via-cyan-100 to-orange-100 dark:from-purple-900 dark:via-blue-900 dark:via-40% dark:via-cyan-900 dark:to-orange-900 transition-colors duration-500">
+      <nav className="flex justify-center items-center py-10">
+        <div className="flex items-center gap-3">
+          <div className="bg-gradient-to-tr from-purple-400 via-blue-400 to-cyan-300 p-2 rounded-full shadow-lg">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="24" cy="24" r="20" fill="#fff" />
+              <path
+                d="M32 32L40 40"
+                stroke="#6366F1"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+              <circle
+                cx="22"
+                cy="22"
+                r="9"
+                stroke="#6366F1"
+                strokeWidth="3"
+                fill="#A5B4FC"
+              />
+              <circle cx="22" cy="22" r="4" fill="#fff" />
+            </svg>
+          </div>
+          <span className="text-4xl font-extrabold bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent select-none tracking-tight drop-shadow-lg">
+            PhotoVault
+          </span>
+        </div>
+      </nav>
       <section className="w-[80vw] m-auto max-w-7xl md:max-w-5xl ">
         <div className="px-4 sm:px-10 w-full max-w-3xl mx-auto mt-12">
           <form
